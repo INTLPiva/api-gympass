@@ -7,7 +7,7 @@ import { InvalidCredentialsError } from "./errors/invalid-credentials-error";
 let usersRepository: InMemoryUsersRepository;
 let authenticateUseCase: AuthenticateUseCase;
 
-describe("Autheticate Use Case", () => {
+describe("Authenticate Use Case", () => {
   beforeEach(() => {
     usersRepository = new InMemoryUsersRepository();
     authenticateUseCase = new AuthenticateUseCase(usersRepository);
