@@ -3,16 +3,16 @@ import { expect, describe, it, beforeEach } from "vitest";
 import { CreateGymUseCase } from "./create-gym";
 
 let gymsRepository: InMemoryGymsRepository;
-let createGymUseCase: CreateGymUseCase;
+let sut: CreateGymUseCase;
 
 describe("Create Gym Use Case", () => {
   beforeEach(() => {
     gymsRepository = new InMemoryGymsRepository();
-    createGymUseCase = new CreateGymUseCase(gymsRepository);
+    sut = new CreateGymUseCase(gymsRepository);
   });
 
   it("should to create gym", async () => {
-    const { gym } = await createGymUseCase.execute({
+    const { gym } = await sut.execute({
       title: "JavaScript Gym",
       description: null,
       phone: null,
